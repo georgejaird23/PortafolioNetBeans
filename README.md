@@ -10,14 +10,14 @@ El objetivo principal de este portafolio es consolidar y demostrar el dominio pr
 
 El repositorio se divide en tres proyectos independientes y funcionales:
 
-### 1. 🐕 Sistema de Veterinaria (`VeterinariaPoo`)
-* **Descripción:** Un simulador interactivo de gestión de pacientes en una clínica veterinaria.
-* **Pilares Aplicados:** 
-  * **Abstracción:** Clase base abstracta `Animal`.
-  * **Encapsulamiento:** Atributos de edad y nombre protegidos con nivel de acceso `private`.
-  * **Herencia:** Clases hijas específicas `Perro` y `Gato` que extienden del padre.
-  * **Polimorfismo:** Implementación de firmas del método abstracto `.hacerSonido()` redefinido con `@Override`.
-  * **Seguridad de Datos:** Manejo explícito de excepciones y condicionales `if (miAnimal != null)` para prevenir el colapso del sistema por errores tipo `NullPointerException`.
+### 1. 🏥 Clínica Veterinaria Web & Base de Datos Relacional (`VeterinariaPoo`)
+* **Descripción:** Evolución de un sistema de consola a una plataforma Full-Stack interactiva para la gestión automatizada de pacientes.
+* **Componentes de Arquitectura Profesional:**
+  * **Front-End (HTML5/CSS3):** Interfaz visual limpia (`index.html`) con formularios dinámicos y listas de selección para registrar mascotas desde el navegador.
+  * **Back-End (Spring Boot):** Servidor web activo en el puerto 8080 que mapea peticiones a través de un controlador REST (`@RestController`) y procesa objetos polimórficos de forma dinámica en la red.
+  * **Persistencia de Datos (JPA / Hibernate):** Conexión a un motor de base de datos relacional en memoria (H2) mediante interfaces de repositorio (`JpaRepository`). Mapeo de herencia relacional en el disco duro usando la estrategia `@Inheritance(strategy = InheritanceType.JOINED)`.
+  * **Consola de Datos SQL:** Acceso al panel gráfico `/h2-console` para realizar auditorías de tablas e interactuar mediante consultas estructuradas directas (`SELECT * FROM ANIMAL;`).
+
 
 ### 2. 🎮 Videojuego de Combate Matemático (`videojuegoPOO`)
 * **Descripción:** Un juego de rol y trivia matemática por turnos en el que el poder de ataque y la supervivencia de los personajes dependen de la agilidad mental del usuario en la consola.
