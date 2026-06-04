@@ -8,26 +8,28 @@ package com.mycompany.veterinariapoo;
  *
  * @author USER
  */
-public class Gato extends Animal{
-    
-    private boolean hogareno;
-    
-    public Gato (String nombre, int edad, boolean hogareno){
-        
-        super(nombre, edad);
-        this.hogareno = hogareno;
+import jakarta.persistence.Entity; // Importación obligatoria
+
+@Entity // 1. Le avisa a la base de datos que el Gato también es una tabla guardable
+public class Gato extends Animal {
+    private boolean hogareño; // Tu variable original
+
+    // 2. CONSTRUCTOR VACÍO OBLIGATORIO para bases de datos
+    public Gato() {}
+
+    public Gato(String nombre, int edad, boolean hogareño) {
+        super(nombre, edad); // Pasa los datos al padre Animal
+        this.hogareño = hogareño;
     }
+
     @Override
-    public void hacerSonido(){
-        System.out.println("🐱 Miau");
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Edad: "+ getEdad());
-        
-        if(hogareno){
-            System.out.println("Condición: Hogareño 🏠");
-        }
-        else{
-            System.out.println("Condición: Callejero 🌙");
-        }
+    public void hacerSonido() {
+        System.out.println("Miau");
+    }
+
+    // Getter para tu variable original
+    public boolean isHogareño() {
+        return hogareño;
     }
 }
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Veterinaria George's</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; text-align: center; }
+        .contenedor { background: white; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); display: inline-block; text-align: left; }
+        .campo { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input[type="text"], input[type="number"] { width: 250px; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background-color: #4CAF50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+    <h1>🐾 Registro de Mascotas Web 🐾</h1>
+    
+    <div class="contenedor">
+        <!-- El action coincide exactamente con tu @GetMapping("/registrar") de Java -->
+        <form action="/registrar" method="get">
+            <div class="campo">
+                <label>Nombre del Perro:</label>
+                <input type="text" name="nombre" required placeholder="Ej. Danger">
+            </div>
+            
+            <div class="campo">
+                <label>Edad:</label>
+                <input type="number" name="edad" required placeholder="Ej. 4">
+            </div>
+            
+            <div class="campo">
+                <label>Tipo de Mascota:</label>
+                <select name="tipo" required style="width: 268px; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="perro">🐶 Perro</option>
+                    <option value="gato">🐱 Gato</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Dato Especial (Raza del perro / ¿Es hogareño? [true/false] para gato):</label>
+                <input type="text" name="datoEspecial" required placeholder="Ej. Criollo o true">
+            </div>
+            
+            <button type="submit">Enviar a la Veterinaria 🚀</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -8,20 +8,29 @@ package com.mycompany.veterinariapoo;
  *
  * @author USER
  */
-public class Perro extends Animal{
-    
+
+import jakarta.persistence.Entity; // Importación obligatoria
+
+@Entity // 1. Le avisa a la base de datos que el Perro también es una entidad guardable
+public class Perro extends Animal {
     private String raza;
-    
-    public Perro( String nombre, int edad, String raza){
-        super (nombre, edad);
+
+    // 2. CONSTRUCTOR VACÍO OBLIGATORIO para bases de datos
+    public Perro() {}
+
+    public Perro(String nombre, int edad, String raza) {
+        super(nombre, edad); // Pasa los datos al padre Animal
         this.raza = raza;
     }
-    
+
     @Override
-    public void hacerSonido(){
-        System.out.println("🐶 Guau guau");
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Edad: "+ getEdad());
-        System.out.println("Raza: " + raza);
+    public void hacerSonido() {
+        System.out.println("Guau guau");
+    }
+
+    // Getter para la raza
+    public String getRaza() {
+        return raza;
     }
 }
+
